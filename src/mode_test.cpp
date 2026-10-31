@@ -14,9 +14,13 @@ SMS_STS bus;
 #define S_RXD 16    
 #define S_TXD 17
 
-// define servos with id, minAngle, maxAngle, home, offset position and dir
-CustomServo hipServo(1, 0, 180, 90, 0, 1);     // servo 1
-CustomServo kneeServo(2, 0, 180, 90, 0, 1); // servo 2
+// The robot hardware is installed when the servos are zeroed at the 
+// middle point (1023)
+// The range of motion starts at 0 and goes half of the range to each 
+// dierection
+// define servos with id, minAngle, maxAngle, home, offset pos and dir
+CustomServo hipServo( 1,      0,       180,    90,  1024,           1); // servo 1
+CustomServo kneeServo(2,    -90,        90,     0,  2048,           1); // servo 2
 
 // link the servos to the leg with the link lenghs
 Leg leg(hipServo, kneeServo, 10.5f, 4.5f);

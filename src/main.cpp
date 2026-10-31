@@ -13,8 +13,8 @@ void setup() {
   setup_main();
 #elif RUN_MODE == 2 
   setup_test();
-#elif RUN_MODE == 3
-  setup_testPose();
+#else
+  #error "Unknown RUN_MODE"
 #endif
 }
 
@@ -24,7 +24,7 @@ void loop() {
   loop_main();
 #elif RUN_MODE == 2
   loop_test();
-#elif RUN_MODE == 3
-  loop_testPose();
+#else
+  #error "Unknown RUN_MODE"
 #endif
 }
